@@ -1,61 +1,19 @@
-html {
-  color: white;
+body {
   background-color: #181719;
+  color: white;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-}
-header #leftbotton {
+/*Fonts*/
+#leftbotton {
   font-family: "Crimson Pro";
+  font-style: normal;
+  font-weight: 200;
   font-size: 14px;
   line-height: 16px;
-  padding: 9px;
   text-transform: uppercase;
-  border: 1px solid;
-  border-color: white;
-}
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 22px;
-}
-header nav p {
-  margin-right: 3em;
-}
-header nav p:hover {
-  text-decoration: underline;
 }
 
-.main-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.main-container .container-text {
-  margin-left: 6em;
-}
-.main-container .container-text h1 {
-  font-family: "Lora";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 61px;
-}
-.main-container .container-text #main-text {
-  width: 410px;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-}
-.main-container .container-text #read-more {
+nav p {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -63,46 +21,134 @@ header nav p:hover {
   line-height: 22px;
 }
 
-#home {
-  width: 737px;
-  height: auto;
+.container-text h1 {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 46px;
+}
+.container-text #main-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+.container-text #read-more {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-.container-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.container-designer #author-name {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+.container-designer #author-job {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #828282;
+}
+.container-designer h2 {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
 }
 
-.container-image {
-  margin-right: 6em;
-  margin-top: 15em;
-}
-
-.container-designer {
-  display: flex;
-  width: 410px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#designer {
-  width: 50px;
-  height: auto;
-  border-radius: 200%;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-}
-footer .username {
-  color: #A9A9A9;
+footer a {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  text-align: center;
+  color: #A9A9A9;
+}
+
+/*Menu*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav {
+  display: none;
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 10;
+  background-color: #181719;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+header nav p:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.7rem;
+}
+header #leftbotton {
+  border: 1px solid;
+  border-color: white;
+  padding: 0.5rem;
+}
+header .menu-icon {
+  display: none;
+}
+header .close-btn {
+  display: none;
+}
+
+main .main-container {
+  display: flex;
+  flex-direction: column;
+}
+main .main-container #main-text {
+  width: 14rem;
+}
+main .main-container .container-image #home {
+  width: 22.5rem;
+  margin: auto;
+}
+main .container-designer {
+  width: 19rem;
+  margin-bottom: 2rem;
+  z-index: 2;
+  background-color: #181719;
+  position: relative;
+  left: 3rem;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+main .container-designer h2 {
+  width: 12rem;
+}
+main .container-designer .designer {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+main .container-designer .designer img {
+  width: 4rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
