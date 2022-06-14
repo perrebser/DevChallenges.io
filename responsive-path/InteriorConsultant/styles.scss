@@ -1,14 +1,15 @@
-$backcolor:#181719;
-$lettercolor:white;
+$backcolor: #181719;
+$lettercolor: white;
 
-body{
+body {
     background-color: $backcolor;
     color: $lettercolor;
+    font-size: 14px;
 }
 
 /*Fonts*/
 
-#leftbotton{
+#leftbotton {
     font-family: 'Crimson Pro';
     font-style: normal;
     font-weight: 200;
@@ -16,8 +17,9 @@ body{
     line-height: 16px;
     text-transform: uppercase;
 }
-nav{
-    p{
+
+nav {
+    p {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 700;
@@ -26,8 +28,8 @@ nav{
     }
 }
 
-.container-text{
-    h1{
+.container-text {
+    h1 {
         font-family: 'Lora';
         font-style: normal;
         font-weight: 500;
@@ -35,7 +37,7 @@ nav{
         line-height: 46px;
     }
 
-    #main-text{
+    #main-text {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 400;
@@ -43,7 +45,7 @@ nav{
         line-height: 17px;
     }
 
-    #read-more{
+    #read-more {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 700;
@@ -52,16 +54,16 @@ nav{
     }
 }
 
-.container-designer{
-    #author-name{
+.container-designer {
+    #author-name {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
         line-height: 15px;
-            }
+    }
 
-    #author-job{
+    #author-job {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
@@ -70,7 +72,7 @@ nav{
         color: #828282;
     }
 
-    h2{
+    h2 {
         font-family: 'Lora';
         font-style: normal;
         font-weight: 700;
@@ -79,8 +81,8 @@ nav{
     }
 }
 
-footer{
-    a{
+footer {
+    a {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
@@ -91,81 +93,94 @@ footer{
 }
 
 /*Menu*/
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    nav{
+    nav {
         display: none;
+
+        p:hover {
+            text-decoration: underline;
+            text-underline-offset: 0.7rem;
+
+        }
+    }
+
+    #leftbotton {
+        border: 1px solid;
+        border-color: white;
+        padding: 0.5rem;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .close-btn {
+        display: none;
+    }
+
+    .close-btn[data-visible="true"] {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 12;
+        display: block;
+    }
+
+    #primary-navigation[data-visible="true"] {
+        display: flex;
         position: fixed;
         inset: 0 0 0 0;
         z-index: 10;
         background-color: #181719;
         height: 100%;
-        
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 0.7rem;
-
-        p:hover{
-           text-decoration: underline;
-           text-underline-offset: 0.7rem;
-            
-        }
     }
-    #leftbotton{
-        border: 1px solid;
-        border-color: white;
-        padding: 0.5rem;
-    }
-    .menu-icon{
-        display: none;
-    }
-   
-    .close-btn{
-        display: none;
-    }
-    
 
 }
 
-main{
-    .main-container{
+main {
+    .main-container {
         display: flex;
         flex-direction: column;
-        
-        #main-text{
-            width:14rem ;
+
+        #main-text {
+            width: 14rem;
         }
-        .container-image{
-            #home{
-               width:22.5rem;
-               margin: auto;
+
+        .container-image {
+            #home {
+                width: 22.5rem;
+                margin: auto;
             }
         }
-    
+
     }
 
-
-    .container-designer{
-        width: 19rem;
-        margin-bottom: 2rem;
+    .container-designer {
+        width: 20em;
+        left: 5em;
+        bottom: 5em;
         z-index: 2;
         background-color: $backcolor;
         position: relative;
-        left: 3rem;
-        bottom: 3rem;
         display: flex;
         flex-direction: column;
 
-        h2{
+        h2 {
             width: 12rem;
         }
-        .designer{
+
+        .designer {
             margin: 0.5rem;
-            img{
+
+            img {
                 width: 4rem;
                 aspect-ratio: 1/1;
                 border-radius: 50%;
@@ -177,23 +192,147 @@ main{
 
         }
     }
-    
+
+}
+
+footer {
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
 }
 
 
+@media screen and(min-width:900px) {
+    .container-text {
+        h1 {
+            font-size: 48px;
+            line-height: 61px;
+        }
+
+        #main-text {
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        #read-more {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    .container-designer {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        #author-name {
+            line-height: 17px;
+        }
+
+        #author-job {
+
+            font-size: 12px;
+            line-height: 15px;
+
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 31px;
+        }
+    }
+
+    header {
+
+        .menu-icon,
+        .close-btn {
+            display: none;
+        }
+
+        nav {
+            margin-right: 4rem;
+            display: flex;
+            justify-content: space-around;
+            gap: 8rem;
+        }
+
+    }
+
+    main {
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10rem;
+
+            .container-text {
+                margin-left: 3rem;
+                width: 30rem;
+
+                #main-text {
+                    width: 25rem;
+                }
+
+            }
+
+            .container-image #home {
+                margin-right: 2.5rem;
+                width: 55rem;
+            }
+        }
+
+        .container-designer {
+            width: 40em;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            position: relative;
+
+            h2 {
+                width: 60%;
+            }
+        }
 
 
 
 
+    }
 
 
+}
+
+@media (min-width:500px) and (max-width:899px) {
 
 
+    header {
+        gap: 5rem;
+        .menu-icon,
+        .close-btn {
+            display: none;
+        }
 
+        nav {
+            margin-right: 2rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
 
+    }
 
+    main {
+        .main-container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+            margin-top: 5rem;
 
-footer{
-    display: flex;
-    justify-content: center;
+            .container-designer{
+               width: 20em;
+
+            }
+
+        }
+    }
+
 }

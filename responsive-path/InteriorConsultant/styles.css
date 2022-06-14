@@ -1,6 +1,7 @@
 body {
   background-color: #181719;
   color: white;
+  font-size: 14px;
 }
 
 /*Fonts*/
@@ -83,15 +84,6 @@ header {
 }
 header nav {
   display: none;
-  position: fixed;
-  inset: 0 0 0 0;
-  z-index: 10;
-  background-color: #181719;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.7rem;
 }
 header nav p:hover {
   text-decoration: underline;
@@ -103,10 +95,29 @@ header #leftbotton {
   padding: 0.5rem;
 }
 header .menu-icon {
-  display: none;
+  display: block;
 }
 header .close-btn {
   display: none;
+}
+header .close-btn[data-visible=true] {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 12;
+  display: block;
+}
+header #primary-navigation[data-visible=true] {
+  display: flex;
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 10;
+  background-color: #181719;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 main .main-container {
@@ -121,13 +132,12 @@ main .main-container .container-image #home {
   margin: auto;
 }
 main .container-designer {
-  width: 19rem;
-  margin-bottom: 2rem;
+  width: 20em;
+  left: 5em;
+  bottom: 5em;
   z-index: 2;
   background-color: #181719;
   position: relative;
-  left: 3rem;
-  bottom: 3rem;
   display: flex;
   flex-direction: column;
 }
@@ -147,8 +157,105 @@ main .container-designer .designer img {
 }
 
 footer {
+  width: 100vw;
+  bottom: 0;
+  position: fixed;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+  .container-text h1 {
+    font-size: 48px;
+    line-height: 61px;
+  }
+  .container-text #main-text {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  .container-text #read-more {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .container-designer {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .container-designer #author-name {
+    line-height: 17px;
+  }
+  .container-designer #author-job {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .container-designer h2 {
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  header .menu-icon,
+header .close-btn {
+    display: none;
+  }
+  header nav {
+    margin-right: 4rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 8rem;
+  }
+
+  main .main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rem;
+  }
+  main .main-container .container-text {
+    margin-left: 3rem;
+    width: 30rem;
+  }
+  main .main-container .container-text #main-text {
+    width: 25rem;
+  }
+  main .main-container .container-image #home {
+    margin-right: 2.5rem;
+    width: 55rem;
+  }
+  main .container-designer {
+    width: 40em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+  }
+  main .container-designer h2 {
+    width: 60%;
+  }
+}
+@media (min-width: 500px) and (max-width: 899px) {
+  header {
+    gap: 5rem;
+  }
+  header .menu-icon,
+header .close-btn {
+    display: none;
+  }
+  header nav {
+    margin-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  main .main-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    margin-top: 5rem;
+  }
+  main .main-container .container-designer {
+    width: 20em;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
